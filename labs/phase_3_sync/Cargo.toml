@@ -1,0 +1,32 @@
+[package]
+name = "phase_3_sync"
+version = "0.1.0"
+edition = "2021"
+authors = ["TinyOS Course"]
+
+[dependencies]
+# no external deps — fully no_std bare-metal
+
+[profile.release]
+panic = "abort"
+lto = false
+debug = true
+
+[profile.dev]
+panic = "abort"
+
+[[bin]]
+name = "kernel"
+path = "src/main.rs"
+
+[lib]
+name = "tinyos_sync"
+path = "src/sync_lib.rs"
+# host-only helper library that re-exports the sync primitives for
+# integration tests under `tests/`. It compiles for the host target (your
+# laptop / CI runner) and uses `std` so `std::thread` can drive real
+# parallelism.
+
+# Host-side unit tests live in `tests/`. They are compiled for the host target
+# (not riscv64) and exercise pure-logic parts of the sync primitives using
+# `std::thread` + `std::sync::atomic` as a stand-in for real hart concurrency.

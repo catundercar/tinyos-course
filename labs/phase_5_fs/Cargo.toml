@@ -1,0 +1,26 @@
+[workspace]
+resolver = "2"
+members = ["easy-fs", "easy-fs-fuse"]
+exclude = []
+
+[package]
+name = "tinyos-phase5"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+easy-fs = { path = "easy-fs" }
+spin = "0.9"
+lazy_static = { version = "1.4", features = ["spin_no_std"] }
+bitflags = "2.4"
+virtio-drivers = "0.7"
+buddy_system_allocator = "0.9"
+riscv = "0.10"
+sbi-rt = { version = "0.0.2", features = ["legacy"] }
+
+[profile.release]
+debug = true
+
+[[bin]]
+name = "kernel"
+path = "src/main.rs"

@@ -1,0 +1,22 @@
+[package]
+name = "phase_0"
+version = "0.1.0"
+edition = "2021"
+authors = ["TinyOS Student"]
+description = "Phase 0 — Boot & Kernel Entry for TinyOS"
+
+[[bin]]
+name = "kernel"
+path = "src/main.rs"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"
+debug = true
+
+[profile.dev]
+panic = "abort"
+opt-level = 1
+debug = true

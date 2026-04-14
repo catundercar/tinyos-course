@@ -1,0 +1,20 @@
+[package]
+name = "user"
+version = "0.1.0"
+edition = "2021"
+
+[profile.release]
+panic = "abort"
+lto = false
+
+[[bin]]
+name = "app_counter"
+path = "src/bin/app_counter.rs"
+
+[[bin]]
+name = "app_yielder"
+path = "src/bin/app_yielder.rs"
+
+[[bin]]
+name = "app_timer"
+path = "src/bin/app_timer.rs"

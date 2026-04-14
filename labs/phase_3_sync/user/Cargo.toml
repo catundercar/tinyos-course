@@ -1,0 +1,19 @@
+[package]
+name = "user"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "philosopher_dinner"
+path = "src/bin/philosopher_dinner.rs"
+
+[[bin]]
+name = "producer_consumer"
+path = "src/bin/producer_consumer.rs"
+
+[[bin]]
+name = "race_counter"
+path = "src/bin/race_counter.rs"
+
+[profile.release]
+panic = "abort"

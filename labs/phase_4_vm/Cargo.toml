@@ -1,0 +1,24 @@
+[package]
+name = "phase_4_vm"
+version = "0.1.0"
+edition = "2021"
+authors = ["TinyOS Course"]
+
+[dependencies]
+spin = "0.9"
+lazy_static = { version = "1.4", features = ["spin_no_std"] }
+bitflags = "2.4"
+riscv = "0.10"
+xmas-elf = "0.9"
+
+[profile.release]
+panic = "abort"
+lto = false
+debug = true
+
+[profile.dev]
+panic = "abort"
+
+[[bin]]
+name = "kernel"
+path = "src/main.rs"

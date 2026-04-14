@@ -1,0 +1,25 @@
+[package]
+name = "phase_2_proc"
+version = "0.1.0"
+edition = "2021"
+authors = ["TinyOS Course"]
+
+[dependencies]
+# fully no_std bare-metal; spin used only for a simple Mutex around TaskManager.
+spin = "0.9"
+lazy_static = { version = "1.4", features = ["spin_no_std"] }
+
+[profile.release]
+panic = "abort"
+lto = false
+debug = true
+
+[profile.dev]
+panic = "abort"
+
+[[bin]]
+name = "kernel"
+path = "src/main.rs"
+
+# Host-side unit tests via `cargo test --target <host>`; they exercise pure-logic
+# modules (TaskContext layout, round-robin pick) without linking the kernel.

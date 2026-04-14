@@ -1,0 +1,30 @@
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+* { box-sizing: border-box; }
+button:hover { opacity: 0.9; }
+a:hover { opacity: 0.85; }
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #27272A; border-radius: 3px; }
+
+body {
+  margin: 0;
+  background: #0A0A0B;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Mobile responsive overrides */
+@media (max-width: 640px) {
+  header {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+  main {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}

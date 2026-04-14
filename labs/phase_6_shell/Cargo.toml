@@ -1,0 +1,27 @@
+[package]
+name = "phase_6_shell"
+version = "0.6.0"
+edition = "2021"
+authors = ["TinyOS Course"]
+description = "Phase 6 — Shell, Pipes, and Coreutils. The final phase: a Unix-like user-land on top of the kernel built in phases 0-5."
+
+[dependencies]
+riscv = "0.10"
+spin = "0.9"
+lazy_static = { version = "1.4", features = ["spin_no_std"] }
+bitflags = "2.4"
+xmas-elf = "0.9"
+buddy_system_allocator = "0.9"
+log = "0.4"
+
+[profile.release]
+debug = true
+lto = false
+opt-level = 3
+
+[[bin]]
+name = "kernel"
+path = "src/main.rs"
+
+[workspace]
+members = ["user"]

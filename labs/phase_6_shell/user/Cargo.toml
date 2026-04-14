@@ -1,0 +1,21 @@
+[package]
+name = "user"
+version = "0.6.0"
+edition = "2021"
+
+[dependencies]
+buddy_system_allocator = "0.9"
+
+[[bin]] name = "sh"         path = "src/bin/sh.rs"
+[[bin]] name = "init"       path = "src/bin/init.rs"
+[[bin]] name = "ls"         path = "src/bin/ls.rs"
+[[bin]] name = "cat"        path = "src/bin/cat.rs"
+[[bin]] name = "echo"       path = "src/bin/echo.rs"
+[[bin]] name = "mkdir"      path = "src/bin/mkdir.rs"
+[[bin]] name = "rm"         path = "src/bin/rm.rs"
+[[bin]] name = "ps"         path = "src/bin/ps.rs"
+[[bin]] name = "kill"       path = "src/bin/kill.rs"
+[[bin]] name = "wc"         path = "src/bin/wc.rs"
+[[bin]] name = "forktree"   path = "src/bin/forktree.rs"
+[[bin]] name = "pipe_test"  path = "src/bin/pipe_test.rs"
+[[bin]] name = "usertests"  path = "src/bin/usertests.rs"

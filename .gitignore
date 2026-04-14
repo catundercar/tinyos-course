@@ -1,0 +1,25 @@
+# Rust
+target/
+**/*.rs.bk
+Cargo.lock
+
+# Node / Vite
+node_modules/
+dist/
+.vite/
+*.log
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# FS images
+*.img
+fs.img
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
